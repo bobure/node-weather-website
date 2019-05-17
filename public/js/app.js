@@ -30,11 +30,10 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?location=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
-                messageOne.textContent = data.error
+                message1.textContent = data.error
             } else {
                 message1.textContent = data.location
                 message2.textContent = data.forecast.dailySummary
-
                 message3.textContent = 'temperature: ' + data.forecast.temperature 
                 message4.textContent = ' precipProbability: ' + data.forecast.precipProbability
                 message5.textContent = ' precipType: ' + data.forecast.precipType
